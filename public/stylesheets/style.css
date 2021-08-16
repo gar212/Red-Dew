@@ -6,6 +6,8 @@ body {
 	letter-spacing: 0.4px;
 }
 
+
+
 .container {
 	padding: 30px 120px 0 120px;
 }
@@ -16,16 +18,20 @@ header nav{
 }
 
 header a{
-	color: #ffffff;
+	color: #aaa;
 	text-decoration: none;
-	font-size: 1em;
+	transition: color 0.2s;
+	font-weight: bold;
 }
 
 header li{
 	float: left;
 	display: inline;
 	padding: 20px 18px 0 18px;
-	letter-spacing: 1px;
+}
+
+header a:hover {
+	color: white;
 }
 
 header ul{
@@ -33,11 +39,26 @@ header ul{
 }
 
 #showcase{
-	min-height: 705px;
-	height: 85vh;
-	background: url(/images/intro_image.jpg) no-repeat fixed;
-	background-size: cover;
-	background-position: center;
+	position: relative;
+	height: fit-content;
+	padding-bottom: 200px;
+	background: #000000ad;
+}
+
+.showcase-bg {
+    position: absolute;
+    overflow: hidden;
+	z-index: -100;
+	left: 0;
+	right: 0;
+}
+
+.showcase-bg-video {
+	height: 100%;
+    width: 185vh;
+    min-width: 100%;
+    min-height: 56.25vw; 
+	float: right;
 }
 
 #logo img{
@@ -50,7 +71,7 @@ header ul{
 	padding: 0 0 0 42px;
 	margin-top: 140px;
 	margin-left: 120px;
-	border-left: 15px solid #aa1430;
+	border-left: 15px solid #df2947;
 	color: white;
 }
 
@@ -59,42 +80,51 @@ header ul{
 	vertical-align: top;
 	letter-spacing: 3px;
 	color: white;
-	font-size: 78px;
+	font-size: 4.5rem;
 }
 
 .vl p{
 	letter-spacing: 1.2px;
-	font-size: 18px;
+	font-size: 1.1rem;
 	width: 60%;
 	line-height: 1.4;
 
 }
 
 #round-button{
-    border: 2.5px solid #ff2845;
+	border: 2px solid #df2947;
+	border-left: 15px solid #df2947;
     background-color: transparent;
-    color: #ff2845;
+    color: #df2947;
     padding: 20px 36px;
-    text-align: center;
-    display: inline-block;
-    font-size: 17px;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     margin: 35px 0 0 0;
-    border-radius: 100px;
-    outline-width: 0; /*Removes blue focus ring*/
+    border-radius: 0px;
     cursor: pointer;
+	transition: all 0.25s;
 }
 
+#round-button:hover {
+	border: 2px solid #fb2649;
+    border-left: 25px solid #fb2649;
+    color: #fb2649;
+}
+
+.section-1, .section-3, .section-4 {
+	box-shadow: inset 0px 14px 20px 0px #ccc;
+}
 
 /* -- SECTION 1 -- */
 
 .section-1{
-	height: auto;
-	width: auto;
+	display: flex;
+	justify-content: space-between;
 	background: #f6f6f6;
 	overflow: hidden;
-	box-shadow: inset -1px 59px 78px -51px #212121;
+	border-left: 10px solid #df2947;
+	max-height: 600px;
 }
 
 .section-1 h2 {
@@ -109,18 +139,17 @@ header ul{
 
 #headUnderline {
 	display: block;
-	position: relative;
-	margin: 0;
-	width: 120px;
-	border-bottom: 25px solid #df2947;
-	bottom: 47px;
-	right: -73px;
-	z-index: 1;
+    position: relative;
+    width: 100%;
+    max-width: 120px;
+    bottom: 50px;
+    right: -80px;
+    z-index: 1;
 }
 
 
 .section-1 p {
-	padding: 40px 20px 55px 85px;
+	padding: 40px 20px 55px 50px;
 	line-height: 1.4;
 	max-width: 40%;
 	display: block;
@@ -131,12 +160,16 @@ header ul{
 
 .section-1 img {
 	display: block;
-	vertical-align: top;
 	float: right;
 	max-width: 50%;	
 	width: 100%;
 	height: auto;
 	margin-left: 10px;
+	object-fit: cover;
+}
+
+#headUnderline, .headUnderline2, #headUnderline3 {
+	border-bottom: 25px solid #e8e2e2;
 }
 
 .headUnderline2 {
@@ -145,14 +178,12 @@ header ul{
 	margin: auto;
 	width: 14%;
 	bottom: 20px;
-	border-bottom: 25px solid #df2947;
 	z-index: 1;
 }
 
 .section-3{
 	background-color: #f6f6f6;
-	min-height: 600px;
-	box-shadow: inset -1px 52px 76px -51px #434343;
+	padding: 20px 0 0;
 }
 
 .section-3 h2{
@@ -173,13 +204,13 @@ header ul{
 	margin-left: 430px;
 	margin-bottom: 0px;
 	bottom: 90px;
+	font-size: 1.125em;
 }
 
 .section-3 #headUnderline3{
 	position: relative;
 	margin: 0;
 	width: 320px;
-	border-bottom: 25px solid #df2947;
 	left: 80px;
     bottom: 20px;
 	z-index: 1;
@@ -200,7 +231,8 @@ header ul{
 
 .owl-item:hover{
 	transition: 0.15s;
-	transform: scale(1.03)!IMPORTANT;
+	transform: scale(1.03)!important;
+	background: #ffffff;
 	
 }
 
@@ -213,6 +245,7 @@ header ul{
 .owl-item:hover img{
 	transition: 0.15s;
 	filter: blur(3px);
+	
 }
 
 .owl-item .details{
@@ -270,11 +303,9 @@ header ul{
 /* SECTION 4 */
 
 .section-4{
-	min-height: 700px;
 	background-color: #f6f6f6;
 	max-width: 100%;
 	height: auto;
-	box-shadow: inset -1px 52px 78px -51px #8a8a8a;
 }
 
 
@@ -294,7 +325,6 @@ header ul{
 }
 
 #peopleCircle {
-	margin-top: 60px;
 	text-align: center;
 }
 
@@ -410,7 +440,16 @@ input:focus, textarea:focus {
 
 .left-footer-media{
 	margin-top: 25px;
+	opacity: 0.5;
+    width: 30px;
+	transition: opacity	0.25s;
+	cursor: pointer;
 }
+
+.left-footer-media:hover{
+	opacity: 1;
+}
+
 
 textarea {
 	width: 100%;
@@ -430,6 +469,11 @@ textarea {
 	border: none;
 	padding: 14px;
 	width: 100%;
+	transition: background-color 0.2s;
+}
+
+.send-button:hover {
+	background-color: #ee4949;
 }
 
 footer{
@@ -442,7 +486,7 @@ footer{
 
 footer p{
 	margin: 0;
-	padding: 20px 35px;
+	padding: 20px 10%;
 }
 
 mark{
@@ -499,11 +543,6 @@ mark{
     .section-1 h2{
     	margin-left: 30px;
     	margin-top: 20px;
-    }
-
-    .section-2 p{
-    	max-width: 80%;
-    	min-width: 80%; 
     }
 
     #headUnderline{
@@ -621,13 +660,17 @@ mark{
 	header ul {
 		padding: 0;
 	}
+
+	.showcase-bg-video {
+		float: left;
+	}
 	
 	.vl {
 		margin-left: 0;
-		margin-top: 60px;
+		margin-top: 100px;
 		border-left: none;
 		text-align:center;
-		padding: 0;
+		padding: 0 20px;
 	}
 	
 	.vl h1 {
