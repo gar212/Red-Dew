@@ -51,13 +51,14 @@ header ul{
 	z-index: -100;
 	left: 0;
 	right: 0;
+	background: #404040;
 }
 
 .showcase-bg-video {
 	height: 100%;
-    width: 185vh;
+    width: 196vh;
     min-width: 100%;
-    min-height: 56.25vw; 
+    min-height: 55vw; 
 	float: right;
 }
 
